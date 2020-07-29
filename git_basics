@@ -1,0 +1,26 @@
+												Basic GIT Commands
+												==================
+							
+Creating the repo & pushing the code to the created repo through GITBASH
+-------------------------------------------------------------------------
+	go to the required folder --> right click select gitbash
+>> git config --global.user.email "github@email.com"
+>> git config --global.user.name "github_username"
+
+>> git init  ---> .git will generate
+	add the files and folders
+>> git add . ---> add the files to the repo
+>> git commit -m "<message>" .  ---> commit with message
+>> git remote add origin <web address>/existed repo
+	Here web address means projecturl(https://gitlab.com/vamshipunna)+project slug(current foldername.git)
+	web address : https://gitlab.com/vamshipunna/somename.git
+>> git push origin master
+--------------------------------------------------------------------------------------------------------------
+> git clone url  ---> to clone the repo
+> git branch		--> to listout all branches
+> git branch <branchname>	--> to create new branch
+> git checkout <branchname>	--> to checkout the other branch
+> git branch -D <branchname>--> to delete the branch
+> git merge <branchname>	--> to merges the specified branch’s history into the current branch.
+> git pull url	--> to pull the code from repo
+> git push origin master --> sends the committed changes of master branch to your remote repository.
