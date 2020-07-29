@@ -1,0 +1,20 @@
+
+==================<< SSH Authentication Between the Servers >>================
+
+Two Servers having IP Addresses like 192.168.1.100 & 192.168.1.101.
+
+Follow Below Steps To Connect from 100 to 101 from root/<any user>.
+
+	> if you are in root user you might have  both private,public keys under /root/.ssh/ folder.
+	> if not found, you can create keys by using command "ssh-keygen". it will generate both keys.
+	> By default keys will be store in /<user>/.ssh/ folder.
+	> we haveto copy this public key(id_rsa.pub) and paste in 192.168.1.101 server under /<user>/.ssh/authorized_keys file.
+	> NOTE: if you not found authorized_keys file under  /<user>/.ssh/ directory you can create manually.
+	> above step will do by doing "ssh-copy-id  -p <port> <user>@192.168.1.101"
+	> if this is not work you can directly copy the public key and paste that key in /<user>/.ssh/authorized_keys file by logging into server 192.168.1.101
+	> Now try to login from 100 server. by using command "ssh root@192.168.1.101"
+	> if it is logged in Successfully then you are good to go. if you get any error like "Permission denied (publickey)".
+	> this error will resolve by going into /etc/ssh/ssh_config of 192.168.1.101.
+	> change	PermitRootLogin prohibit-password to PermitRootLogin yes 
+				PasswordAuthentication no to PasswordAuthentication yes
+	> then restart the service "sudo service ssh restart"
