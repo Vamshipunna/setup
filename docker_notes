@@ -1,9 +1,9 @@
 DOCKER INSTRUCTIONS
 --------------------
-FROM 	   : from which platform to work on.
-ENV		   : to define environment variables
-RUN		   : to execute (updating,installing s/ws etc)
-WORKDIR    : its like "cd". to change the directory.
+FROM 	   : Specifies the base image that the Dockerfile will use to build a new image.
+ENV		   : Sets the environment variables.
+RUN		   : Runs any UNIX command to build the image. (updating,installing s/ws etc)
+WORKDIR    : its like "cd". to change the directory.if it is not available it will create 
 COPY 	   : it takes in a src and destination. It only lets you copy in a local file or directory from your host into the Docker image itself. 
 ADD        : same like copy. but it also supports tar files,urls to the specified directories.
 				the best use for ADD is local tar file auto-extraction into the image if the tar file is available in local only.
