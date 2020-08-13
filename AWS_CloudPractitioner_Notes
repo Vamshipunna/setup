@@ -1,0 +1,59 @@
+									AWS CLOUD PRACTITIONER -- SOURCE : PLURALSIGHT
+								======================================================
+=>	"Elasticity" is the ability to acquire resources as you need them and release resources when you no longer need them. In the cloud, 
+	you want to do this automatically.
+=>	"Cloud computing" is the on-demand delivery of compute power, database storage, applications, and other IT resources through a 
+	cloud services platform via the internet with pay-as-you-go pricing.
+=>	cloud computing models --> IaaS, PaaS, SaaS.
+=>	cloud Deployment Models
+		Public Cloud Ex. AWS
+		Private Cloud/On-Premises Cloud
+		Hybrid Cloud
+=>	Different Scenarios on Cloud computing
+	--------------------------------------
+	1) Roger's company runs several production workloads in its data center. they are using VMWare to have cloud-like infrastructure in their data center.
+		They want to use AWS and integrate it with their data center for new workloads.
+		Q : which cloud deployment model would his company be following?
+		A : Hybrid Cloud
+	2) Eliza's company is trying to decide whether to fund a new line of business.
+		Eliza's team is looking to monetize a new emerging technology
+		This new line of business will require new infrastructure.
+		Q : What benefit of cloud computing would be most relevant to her company?
+		A : Pay as you go
+	3) Jennifer is the CTO at an insurance company. They are considering moving to the cloud instead of colocating servers
+		They want to make sure they have maximum control of the cloud servers.
+		Q : Which cloud computing model would they need to leverage?
+		A : Infrastructure as a Service (IaaS)
+=> Edge Locations
+	Used as nodes of a global content delivery network(CDN).
+	Utilized by Amazon CloudFront and Amazon Route53
+	Located globally at over 200 different locations.
+	Allows AWS to serve content from locations closest to users.
+=>	Differenct Scenarios on Global Infrastructure
+	---------------------------------------------
+	1) Jane's company is looking to transition to AWS. They are starting with a few workloads. 
+		it is requirement to store backup data in multiple geographic areas.
+		Q : Which element of AWS global infrastructure will best suit this need?
+		A : AWS Region
+	2) Tim's company servers content through their site to users around the globe. They are looking to optimize performance to users around the world
+		They want to leverage a content Delivery network(CDN)
+		Q : Which element of the AWS global infrastructure will be used in this case?
+		A : AWS Edge Location
+	3) Ellen's company is transitioning one of their legacy applications to AWS. This application requires uptime of at least 99.5%
+		They want to be sure any issues at a single data center don't cause an outage.
+		Prob : Which element of the AWS global infrastructure supports this need?
+		Sol  : AWS Availability Zone(AZ)
+=>	Different Scenarios on Cloud Economics
+	--------------------------------------
+	1) Oscar's company has multiple departments that work within AWS. Finance is asking for a clean separation of AWS costs between departments
+		Currently all resources are included within a single AWS account
+		Prob : What approach would meet this need for future costs with minimal effort?
+		Sol  : Create and leverage a Resource Tag for Department
+	2) Cindy's company is considering a transition to the cloud. They currently have two physical data centers that they own and maintain
+		Stakeholders are questioning whether this approach will save money
+		Prob: Which approach should Cindy take to make a case for the cloud?
+		Sol : Utilize the AWS TCO Calculator and provide reports to stakeholders
+	3) William is a web developer at his company. Given some recent downtime he is looking at moving their site to the cloud
+		Finance is asking for an estimate of costs for this transition to AWS
+		Prob: What approach should william take to get this data to his finance team?
+		Sol : Utilize the AWS simple monthly Calculator and share results.
