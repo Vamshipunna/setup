@@ -1,0 +1,41 @@
+DOCKER INSTRUCTIONS
+--------------------
+FROM 	   : from which platform to work on.
+ENV		   : to define environment variables
+RUN		   : to execute (updating,installing s/ws etc)
+WORKDIR    : its like "cd". to change the directory.
+COPY 	   : it takes in a src and destination. It only lets you copy in a local file or directory from your host into the Docker image itself. 
+ADD        : same like copy. but it also supports tar files,urls to the specified directories.
+				the best use for ADD is local tar file auto-extraction into the image if the tar file is available in local only.
+CMD 	   : to execute the commands.
+ENTRYPOINT : to execute the commands
+difference between ENTRYPOINT & CMD is we can't override the ENTRYPOINT, whereas CMD will do.
+Note: There is a way to override the ENTRYPOINT instruction - you need to add the --entrypoint flag prior to the container_name when running the command.
+There are two types of forms.
+1. Shell form
+2. exec form
+NOTE : recommended to use exec form to prevent potential performance issues.
+Syntax for Shell form	: <instruction> <command>  Ex: CMD echo "vamshi"  (or) CMD ["echo","vamshi"]
+Syntax for exec form	: <instruction> ["executable", "Parameter"]  Ex: ENTRYPOINT echo "vamshi" (or) ENTRYPOINT ["echo", "vamshi"]
+
+
+DOCKER COMMANDS
+----------------
+docker pull <imagename>			--> to pull the image
+docker tag <imageID> <dockeruser>/<reponame>:<tag>  --> to tag the image
+docker push <dockeruser>/<reponame>:<tag> 			--> to push the image to the dockerhub
+docker images 					--> to listout the docker images
+docker ps (or) docker container ls --> to listout the running containers
+docker ps -a (or) docker container ls -a --> to listout all containers(both running & non-running)
+docker ps -aq 					--> to listout all containers with only giving containersIDs
+docker rmi <imageID> 			--> to remove the image
+docker rmi -f <imageID> 		--> to remove the image by force
+docker rm <containerID>			--> to remove container
+docker stop $(docker ps -aq) 	--> to stop all containers
+docker rm $(docker ps -aq) 		--> to remove all containers
+docker system prune 			--> remove all resources that aren't associated with a container.(unused images,containers,volumes,networks etc)
+docker build -t <tagname> . 	--> to build the images using dockerfile
+docker run -itd <imagename> 	--> to run the container in deamon
+docker run -p <usingport>:<defaultport> -itd <imageID> --> to run the container using port.
+docker volume ls --> to listout the volumes
+docker volume <volumename> 		--> to create volume
